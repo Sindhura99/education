@@ -1,0 +1,498 @@
+{
+  "intents": [
+    {
+      "intent": "greetings",
+      "examples": [
+        {
+          "text": "hi"
+        },
+        {
+          "text": "hey! watsup"
+        },
+        {
+          "text": "hello"
+        },
+        {
+          "text": "hello there"
+        },
+        {
+          "text": "hi there"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "onlineclassfeedback",
+      "examples": [
+        {
+          "text": "feedback for online class"
+        },
+        {
+          "text": "is online class good"
+        },
+        {
+          "text": "I want to know the feedback of online class"
+        },
+        {
+          "text": "can i get the feedback of online class"
+        },
+        {
+          "text": "online class feedback"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "question",
+      "examples": [
+        {
+          "text": "I required details for online classes and its tools"
+        },
+        {
+          "text": "can i ask you a question regarding online classes and its tools"
+        },
+        {
+          "text": "I want details for online classes and its tools"
+        },
+        {
+          "text": "can i get details on online classes and its tool"
+        },
+        {
+          "text": "need details for online classes and its tools"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "onlinetool",
+      "examples": [
+        {
+          "text": "can i get the list of online tools for classes"
+        },
+        {
+          "text": "which online tool to be used for classes"
+        },
+        {
+          "text": "better online tool"
+        },
+        {
+          "text": "online tool"
+        },
+        {
+          "text": "no. of online tools available"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "goodbye",
+      "examples": [
+        {
+          "text": "thank you for information"
+        },
+        {
+          "text": "thanks"
+        },
+        {
+          "text": "thanks alot"
+        },
+        {
+          "text": "take care"
+        },
+        {
+          "text": "see you again"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "tools",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "many tools",
+          "synonyms": [
+            "more"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "feedback",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "excellent",
+          "synonyms": [
+            "good"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "details",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "information for online tool",
+          "synonyms": [
+            "knowledge"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_8_1590304014430",
+      "event_name": "focus",
+      "dialog_node": "handler_9_1590304014450",
+      "previous_sibling": "handler_4_1590304014450"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_8_1590304014430",
+      "context": {
+        "tools": "@tools"
+      },
+      "conditions": "@tools",
+      "event_name": "input",
+      "dialog_node": "handler_4_1590304014450"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_7_1590303564958",
+      "event_name": "focus",
+      "dialog_node": "handler_9_1590303564980",
+      "previous_sibling": "handler_3_1590303564980"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_7_1590303564958",
+      "context": {
+        "feedback": "@feedback"
+      },
+      "conditions": "@feedback",
+      "event_name": "input",
+      "dialog_node": "handler_3_1590303564980"
+    },
+    {
+      "type": "slot",
+      "parent": "node_4_1590303516736",
+      "variable": "$feedback",
+      "dialog_node": "slot_7_1590303564958",
+      "previous_sibling": "handler_2_1590303564265"
+    },
+    {
+      "type": "event_handler",
+      "parent": "node_4_1590303516736",
+      "event_name": "focus",
+      "dialog_node": "handler_2_1590303564265"
+    },
+    {
+      "type": "slot",
+      "parent": "node_8_1590303914392",
+      "variable": "$tools",
+      "dialog_node": "slot_8_1590304014430",
+      "previous_sibling": "handler_3_1590304013780"
+    },
+    {
+      "type": "event_handler",
+      "parent": "node_8_1590303914392",
+      "event_name": "focus",
+      "dialog_node": "handler_3_1590304013780"
+    },
+    {
+      "type": "slot",
+      "parent": "node_9_1590304404670",
+      "dialog_node": "slot_10_1590304572409",
+      "previous_sibling": "handler_4_1590304571314"
+    },
+    {
+      "type": "event_handler",
+      "parent": "node_9_1590304404670",
+      "event_name": "focus",
+      "dialog_node": "handler_4_1590304571314"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_10_1590304572409",
+      "event_name": "focus",
+      "dialog_node": "handler_9_1590304572429",
+      "previous_sibling": "handler_10_1590304572429"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_10_1590304572409",
+      "event_name": "input",
+      "dialog_node": "handler_10_1590304572429"
+    },
+    {
+      "type": "slot",
+      "parent": "node_5_1590303387684",
+      "variable": "$attendance",
+      "dialog_node": "slot_1_1590303491336",
+      "previous_sibling": "handler_1_1590303490719"
+    },
+    {
+      "type": "event_handler",
+      "parent": "node_5_1590303387684",
+      "event_name": "focus",
+      "dialog_node": "handler_1_1590303490719"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_1_1590303491336",
+      "event_name": "focus",
+      "dialog_node": "handler_10_1590303491355",
+      "previous_sibling": "handler_7_1590303491355"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_1_1590303491336",
+      "context": {
+        "attendance": "@attendance"
+      },
+      "conditions": "@attendance",
+      "event_name": "input",
+      "dialog_node": "handler_7_1590303491355"
+    },
+    {
+      "type": "frame",
+      "title": "Handle question",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "yes!! you can ask me"
+              },
+              {
+                "text": "i can provide answer which details you need"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#question",
+      "dialog_node": "node_9_1590304404670",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "frame",
+      "title": "Handle attendance",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "the total number of students attending the class is 70-80% "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#studentattendance",
+      "dialog_node": "node_5_1590303387684",
+      "previous_sibling": "node_4_1590303516736"
+    },
+    {
+      "type": "frame",
+      "title": "Handle feedback",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "the feedback for online classes is very good"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#onlineclassfeedback",
+      "dialog_node": "node_4_1590303516736",
+      "previous_sibling": "node_8_1590303914392"
+    },
+    {
+      "type": "frame",
+      "title": "Handle online ",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "there are many open source tools available to conduct online classes like cisco webex, google meet, zoom, big blue button and etc.. so you can use anyone tool."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#onlinetool",
+      "dialog_node": "node_8_1590303914392",
+      "previous_sibling": "node_9_1590304404670"
+    },
+    {
+      "type": "standard",
+      "title": "Handle goodbye",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "you are welcome"
+              },
+              {
+                "text": "most welcome"
+              },
+              {
+                "text": "my pleasure"
+              },
+              {
+                "text": "you too take care"
+              },
+              {
+                "text": "see you again"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#goodbye",
+      "dialog_node": "node_4_1590303315659",
+      "previous_sibling": "node_5_1590303387684"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_3_1590303248365",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "Handle greetings",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "hello there"
+              },
+              {
+                "text": "hi there"
+              },
+              {
+                "text": "hey!! cool"
+              },
+              {
+                "text": "hello"
+              },
+              {
+                "text": "hiiee"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#greetings",
+      "dialog_node": "node_3_1590303248365",
+      "previous_sibling": "node_4_1590303315659"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello. How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "My first skill",
+  "language": "en",
+  "description": ""
+}
